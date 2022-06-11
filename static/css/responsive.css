@@ -1,0 +1,36 @@
+/*
+Free Html5 Responsive Templates
+Author: Kimmy Tran
+Author URI: https://www.zerotheme.com/
+*/
+html {
+   -webkit-text-size-adjust: none;
+}
+.video embed,
+.video object,
+.video iframe {
+   width: 100%;
+   height: auto;
+}
+img{
+	max-width:100%;
+	height: auto;
+   	width: auto\9; /* ie8 */
+}
+/*------------------------*/
+
+@media only screen and (max-width: 1000px) {
+	header{background: none;}
+	nav{background: none; height: 150px;}
+	#slide{display: none;}
+}
+
+@media only screen and (max-width: 767px){
+	
+}
+@media only screen and (max-width: 420px) {
+	nav{background: none; height: 300px;}
+}
+@media only screen and (max-width: 260px) {
+	
+}

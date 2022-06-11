@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<title>Photographer and Graphic Designer</title>
+<meta name="description" content="Description goes here"/>
+<meta name="author" content="CssTemplateHeaven">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'/>
+    <link href="fonts/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
+
+
+</head>
+<body id="homepage">
+
+
+<div class="menu collapse">
+ 
+    <h1>COLOR YOUR WORLD</h1>
+    <span>photography &amp; design</span>
+    <nav id="cbp-fbscroller1" class="cbp-fbscroller">
+        <a href="{{ url_for('home') }}" class="cbp-fbcurrent">HOME</a>
+        <a href="{{ url_for('color') }}">COLORIZATION</a>
+        <a class="experience"  href="{{ url_for('resize') }}">EDIT</a>
+        <a href="{{ url_for('add') }}" href="#fbsection4">ADD TEXT</a>
+    </nav>
+    <p class="copy">MEMORIE WORLD
+        <span>Designed by <a href="#" target="_blank">TALWAR</a></span>
+    </p>
+    <a class="tablet-close icon-menu"><i class="fa fa-align-justify"></i></a>
+</div>
+<div id="cbp-fbscroller" class="cbp-fbscroller">
+
+<!-- TEXT IN MIDDLE IMAGE TOP -->
+
+<section id="fbsection1">
+    <div class="block">
+        <span class="effectopacity"></span>
+        <div class="tablet-logo">
+            <div class="inner-tablet-logo">
+            
+                <h1>MAKE, LIVE MOVEMENTS</h1>
+                <span>photography &amp; design</span>
+                <!-- <div class="button" >
+
+                   <a href="#">COLORIZATION</a>
+                </div> -->
+                <div class="row"> 
+                    <h2>Select a file to upload</h2>
+                    <p>
+                        {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                            <ul>
+                            {% for message in messages %}
+                              <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                          {% endif %}
+                        {% endwith %}
+                    </p>
+                    {% if filename %}
+                        <div>
+                            <img src="{{ url_for('display_image', filename=filename) }}">
+                        </div>
+                    {% endif %}
+                    <form method="post" action="/color" enctype="multipart/form-data" >
+                       
+                        <dl>
+                            <p>
+                                <input type="file" name="file" class="form-control" autocomplete="off" required>
+                            </p>
+                        </dl>
+                        <p>
+                            <input type="submit" value="COLORIZATION" class="button">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</body>
+</html>
